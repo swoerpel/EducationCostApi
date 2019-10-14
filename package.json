@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/swoerpel/EducationCostApi#readme",
   "devDependencies": {
+    "morgan": "^1.9.1",
     "nodemon": "^1.19.3"
   },
   "dependencies": {
