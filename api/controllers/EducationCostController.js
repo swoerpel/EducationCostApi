@@ -1,19 +1,26 @@
 'use strict';
 var XLSX = require('xlsx');
 exports.calculate_cost = function (req, res) {
-    let response = CalculateCost(req.body);
-    if (response == 400) {
-        return res.status(response).send({ //400 -> bad request
-            message: 'Error: College name is required'
-        });
-    }
-    if (response == 401) {
-        return res.status(response).send({ //401 -> college not found
-            message: 'Error: College not found'
-        });
-    }
-    else {
-        res.send(response);
+    try {
+        let response = CalculateCost(req.body);
+        if (response == 400) {
+            return res.status(response).send({ //400 -> bad request
+                message: 'Error: College name is required'
+            });
+        }
+        if (response == 401) {
+            return res.status(response).send({ //401 -> college not found
+                message: 'Error: College not found'
+            });
+        }
+        else {
+            res.send(response);
+        }
+    } catch (e) {
+        console.log(e)
+        res.status(500).send({
+            message: 'Server Error'
+        })
     }
 };
 
