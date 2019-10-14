@@ -53,18 +53,28 @@ API for calculating cost of going to different colleges optionally including roo
   
 * **Sample Calls**
   - Body 1
-  ```
-  {
-    	"college_name": "Universty of Wisconsin, Madison",
-	    "include_room_and_board" : false
+  ```{
+    "college_name": "Universty of Wisconsin, Madison",
+    "include_room_and_board" : false
   }
   ```
-  - Response 1
-  ```
-  {
+  - Response 1 - information for both in and out of state exists
+  ```{
     "college_name": "University of Wisconsin, Madison",
     "in_state": 10955,
     "out_of_state": 36174
+  }
+  ```
+  
+  - Body 2 - "include_room_and_board" is optional true
+  ```{
+    "college_name": "Liberty University",
+  }
+  ```
+  - Response 2 - information for only in state exists
+  ```{
+    "college_name": "Liberty University",
+    "in_state": 24910
   }
   ```
       
