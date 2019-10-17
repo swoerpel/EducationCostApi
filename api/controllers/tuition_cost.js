@@ -35,7 +35,7 @@ var CalculateCost = (params) => {
     return tuition;
 }
 
-var CalculateTuition = (college_information, room_and_board) => {
+var CalculateTuition = (college_information, room_and_board = true) => {
     let in_state_cost;
     let out_of_state_cost;
     let room_and_board_cost;
