@@ -19,12 +19,15 @@
   "author": "Steven Woerpel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/swoerpel/EducationCostApi/issues"
+    "url": "https://github.com/swoerpel/EducationCostApi"
   },
   "homepage": "https://github.com/swoerpel/EducationCostApi#readme",
   "devDependencies": {
+    "mocha": "^6.2.2",
     "morgan": "^1.9.1",
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "express": "^4.17.1",

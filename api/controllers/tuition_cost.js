@@ -5,12 +5,14 @@ exports.calculate_cost = function (req, res) {
         let response = CalculateCost(req.body);
         if (response == 400) {
             return res.status(response).send({ //400 -> bad request
-                message: 'Error: College name is required'
+                message: 'Error: College name is required',
+                code: 400
             });
         }
         if (response == 401) {
             return res.status(response).send({ //401 -> college not found
-                message: 'Error: College not found'
+                message: 'Error: College not found',
+                code: 401
             });
         }
         else {
@@ -19,7 +21,8 @@ exports.calculate_cost = function (req, res) {
     } catch (e) {
         console.log(e)
         res.status(500).send({
-            message: 'Server Error'
+            message: 'Server Error',
+            code: 500
         })
     }
 };
